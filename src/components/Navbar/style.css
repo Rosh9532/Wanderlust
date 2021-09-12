@@ -1,0 +1,10 @@
+label.logo img {
+  height: 91px;
+  margin-top: -2px;
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+
+  font-weight: bold;
+}

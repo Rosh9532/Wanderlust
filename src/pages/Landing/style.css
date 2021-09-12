@@ -1,0 +1,41 @@
+.intro {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background: url(../../assets/home.jfif) center center no-repeat;
+  background-color: #e5e5e5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro .overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+.intro h1 {
+  font-style: oblique;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
+.intro h1 span {
+  font-weight: 800;
+  color: #5ca9fb;
+}
+.intro p {
+  font-style: oblique;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+header .intro-text {
+  padding-top: 350px;
+  padding-bottom: 200px;
+  text-align: center;
+}
