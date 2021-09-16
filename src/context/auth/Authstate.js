@@ -40,6 +40,7 @@ export const AuthProvider = (props) => {
   };
   const logout = () => {
     localStorage.clear();
+    dispatch({ type: "LOGOUT", payload: "Logged out the user" });
   };
 
   return (
