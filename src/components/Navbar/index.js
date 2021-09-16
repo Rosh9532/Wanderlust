@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -7,8 +7,9 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import "./style.css";
 import logo from "../../assets/logo.png";
-import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/auth/Authstate";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarButtons: {
     marginLeft: "auto",
-    display: "inline-flex",
+    display: "flex",
     flexWrap: "wrap",
     gap: "12px",
   },
@@ -32,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     color: "black",
     fontSize: "40px",
+    marginLeft: "-120px",
+    fontFamily: "'Dancing Script', cursive",
   },
 }));
 
@@ -42,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const Navbar = (props) => {
   const classes = useStyles();
+  const { isAuthenticated, logout } = useContext(AuthContext);
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
@@ -54,34 +58,94 @@ export const Navbar = (props) => {
           >
             {/* <MenuIcon /> */}
             <Link to="/">
-              <label class="logo">
+              <label className="logo">
                 <img src={logo} alt="" />
               </label>
             </Link>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Wanderlust
-          </Typography>
-          <div className={classes.toolbarButtons}>
-            <Link to="/songlist">
-              <Typography variant="h6" className={classes.title}>
-                Liked
-              </Typography>
-            </Link>
-            <Link to="/listened">
-              <Typography variant="h6" className={classes.title}>
-                Listened
-              </Typography>
-            </Link>
-            <Link to="/">
-              <Button color="inherit">
-                <AddCircleOutlineIcon />
-                ADD
+          <Link to="/">
+            <Typography variant="h6" className={classes.title}>
+              Wanderlust
+            </Typography>
+          </Link>
+          {isAuthenticated ? (
+            <div className={classes.toolbarButtons}>
+              <Link to="/saved">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ width: "150px" }}
+                >
+                  HOLIDAY LIST
+                </Button>
+              </Link>
+              {/* <Link to="/visited">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ width: "150px" }}
+                >
+                  VISITED
+                </Button>
+              </Link> */}
+              <Link to="/">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ width: "150px", textDecoration: "none" }}
+                  onClick={() => {
+                    logout();
+                  }}
+                >
+                  LOGOUT
+                </Button>
+              </Link>
+            </div>
+          ) : (
+            <div className={classes.toolbarButtons}>
+              <Link to="/signin">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ width: "150px", textDecoration: "none" }}
+                >
+                  LOGIN
+                </Button>
+              </Link>
+            </div>
+          )}
+        </Toolbar>
+        {/* <div className={classes.toolbarButtons}>
+            <Link to="/watchlist">
+              <Button
+                variant="contained"
+                color="secondary"
+                style={{ width: "150px" }}
+              >
+                HOLIDAY LIST
               </Button>
             </Link>
-            <Button color="inherit">Login</Button>
+            <Link to="/visited">
+              <Button
+                variant="contained"
+                color="secondary"
+                style={{ width: "150px" }}
+              >
+                VISITED
+              </Button>
+            </Link>
+
+            <Link to="/visited">
+              <Button
+                variant="contained"
+                color="secondary"
+                style={{ width: "150px", textDecoration: "none" }}
+              >
+                LOGIN
+              </Button>
+            </Link>
           </div>
-        </Toolbar>
+        </Toolbar> */}
       </AppBar>
     </div>
   );

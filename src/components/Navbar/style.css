@@ -1,5 +1,11 @@
-label.logo img {
+.logo {
+  width: "91px";
+  overflow: hidden;
+}
+
+.logo img {
   height: 91px;
+
   margin-top: -2px;
   color: white;
   font-size: 35px;

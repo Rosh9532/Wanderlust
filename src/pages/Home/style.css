@@ -1,4 +1,4 @@
-.intro {
+/* .intro {
   display: table;
   width: 100%;
   padding: 0;
@@ -37,4 +37,44 @@ header .intro-text {
   padding-top: 350px;
   padding-bottom: 200px;
   text-align: center;
+} */
+.rosh {
+  display: "flex";
+
+  flex-wrap: "wrap";
+}
+.rosh > * {
+  flex: 1 1 80px;
+}
+
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationDisabled a {
+  color: grey;
+  background-color: grey;
 }
