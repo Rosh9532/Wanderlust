@@ -22,7 +22,7 @@ export const Home = (props) => {
   const fetchdata = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("https://restcountries.eu/rest/v2/all");
+      const res = await axios.get("https://restcountries.com/v3.1/all");
       setLoading(false);
       setData(res.data);
       //   console.log(res.data);
