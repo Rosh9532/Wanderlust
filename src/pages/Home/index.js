@@ -4,8 +4,8 @@ import ReactPaginate from "react-paginate";
 import CustomCard from "../../components/Card";
 import { Navbar } from "../../components/Navbar";
 import "./style.css";
-import { Button } from "@material-ui/core";
-import { Control } from "../../components/Controls";
+// import { Button } from "@material-ui/core";
+// import { Control } from "../../components/Controls";
 import { AuthContext } from "../../context/auth/Authstate";
 /**
  * @author
@@ -25,7 +25,7 @@ export const Home = (props) => {
       const res = await axios.get("https://restcountries.com/v3.1/all");
       setLoading(false);
       setData(res.data);
-      //   console.log(res.data);
+      console.log(res.data);
     } catch (err) {
       console.log(err);
     }

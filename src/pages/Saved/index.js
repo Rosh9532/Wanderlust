@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
 import CustomCard from "../../components/Card";
 import { GlobalContext } from "../../context/GlobalState";
-import { Control } from "../../components/Controls";
+// import { Control } from "../../components/Controls";
 import { Navbar } from "../../components/Navbar";
 import { AuthContext } from "../../context/auth/Authstate";
 /**

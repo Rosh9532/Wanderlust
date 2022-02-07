@@ -32,18 +32,19 @@ export default function CustomCard({ type, country }) {
   console.log(country);
   const savedisabled = savedcountry ? true : false;
 
-  console.log(country.name);
+  console.log(country.name.common);
+  console.log("hello");
   return (
     <Card className={classes.foot}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={country.flag}
-          title={country.name}
+          image={country.flags.svg}
+          title={country.name.common}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {country.name}
+            {country.name.common}
           </Typography>
           {/* <Typography variant="body2" color="textSecondary" component="p">
            
